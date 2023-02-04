@@ -9,7 +9,6 @@ export const Post = ({ postId, navigateToParent = true }: { postId: string, navi
     const emoji = page.icon ? page.icon?.emoji : '';
     const title = page.properties.title.title[0].plain_text;
     const parentId = page.parent.type === 'page_id' && navigateToParent ? page.parent.page_id : '';
-    console.log('page', page)
     return (
       <main className={styles.main}>
         <TitleComponent parentId={parentId} emoji={emoji} title={title} />

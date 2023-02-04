@@ -10,5 +10,5 @@
     word-break: break-word;
     caret-color: rgba(255, 255, 255, 0.81);
     padding: 3px 2px;
-    min-height: 1em;
+    min-height: 30px;
 }

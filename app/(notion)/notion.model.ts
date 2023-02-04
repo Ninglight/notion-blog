@@ -1,4 +1,7 @@
 export enum NotionBlockType {
+    HEADING_1 = 'heading_1',
+    HEADING_2 = 'heading_2',
+    HEADING_3 = 'heading_3',
     PARAGRAPH = 'paragraph',
     CHILD_PAGE = 'child_page',
     TODO = 'to_do',
