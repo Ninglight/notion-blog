@@ -1,8 +1,8 @@
 import { use } from "react";
 import { NotionAdapter } from "../notion.adapter";
 
-export default function Head({ params }: { params: { slug: string }}) {
-  const page = use(NotionAdapter.getPageMeta(params.slug)); 
+export default async function Head({ params }: { params: { slug: string }}) {
+  const page = await NotionAdapter.getPageMeta(params.slug); 
   const emoji = page.icon ? page.icon?.emoji : '';
   const title = page.properties.title.title[0].plain_text;
   return (
