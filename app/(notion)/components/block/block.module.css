@@ -1,0 +1,14 @@
+.block {
+    flex: 1 1 0px; 
+    min-width: 1px; 
+    padding-top: 3px; 
+    padding-bottom: 3px; 
+    padding-left: 2px;
+    max-width: 100%;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    caret-color: rgba(255, 255, 255, 0.81);
+    padding: 3px 2px;
+    min-height: 1em;
+}
