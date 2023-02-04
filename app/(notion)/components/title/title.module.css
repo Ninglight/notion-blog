@@ -3,6 +3,23 @@
     padding-bottom: 12px;
 }
 
+.cover {
+    height: 300px;
+    width: 100%;
+    
+}
+
+.coverWithEmoji {
+    margin-bottom: -35px;
+}
+
+.cover img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
 .emoji {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
     line-height: 1em;
