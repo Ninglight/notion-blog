@@ -11,7 +11,7 @@ export class NotionApi {
   }
 
   static async getBlockChildren(pageId: string) {
-    return NotionApi.get(`${this.basepath}blocks/${pageId}/children?page_size=100`);
+    return NotionApi.get(`${this.basepath}blocks/${pageId}/children?page_size=200`);
   }
 
   static async get(url: string) {

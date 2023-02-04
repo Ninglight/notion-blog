@@ -1,0 +1,15 @@
+.title {
+    width: 100%;
+    padding-bottom: 12px;
+}
+
+.emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
+    line-height: 1em;
+    white-space: nowrap;
+    font-size: 78px;
+}
+
+.goBack {
+    margin-bottom: 12px;
+}

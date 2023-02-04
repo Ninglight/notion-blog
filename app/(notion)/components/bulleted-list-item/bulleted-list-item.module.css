@@ -1,0 +1,28 @@
+.bulletedListItem {
+    display: flex; 
+    align-items: flex-start; 
+    width: 100%; 
+    padding-left: 2px; 
+    color: inherit; 
+    fill: inherit;
+}
+
+.bullet {
+    user-select: none; 
+    margin-right: 2px; 
+    width: 24px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-grow: 0; 
+    flex-shrink: 0; 
+    min-height: calc(1.5em + 3px + 3px);
+    line-height: 1; 
+    margin-bottom: 0px; 
+}
+
+.bullet::before {
+    font-family: Arial;
+    content: "•";
+    font-size: 1.5em; 
+}
