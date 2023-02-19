@@ -28,7 +28,10 @@ export class NotionApi {
       headers: {
         'Notion-Version': '2022-06-28',
         'content-type': 'application/json',
+        'mode': 'no-cors',
         'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+        "Access-Control-Max-Age": "86400",
         'Authorization': `Bearer ${this.token}`,
       }
     }

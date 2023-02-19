@@ -1,0 +1,20 @@
+.header {
+    background-color: var(--header-background-color);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: saturate(180%) blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    
+}
+
+.header > div {
+    flex-grow: 1;
+}
+
+.logo {
+
+}

@@ -11,7 +11,7 @@ export const Post = ({ postId, navigateToParent = true }: { postId: string, navi
     const title = page.properties.title.title[0].plain_text;
     const parentId = page.parent.type === 'page_id' && navigateToParent ? page.parent.page_id : '';
     return (
-      <main className={styles.main}>
+      <main className={`${styles.main} container`}>
         <TitleComponent parentId={parentId} emoji={emoji} title={title} cover={cover} />
         {blocks?.results.map((result: any, index: number) => <BlockComponent key={index} result={result} /> )}
       </main>

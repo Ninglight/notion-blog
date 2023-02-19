@@ -1,13 +1,13 @@
 import { NotionAdapter } from "./notion.adapter";
 
 export class NotionHelper {
-    static async getPaths(pageId: string): Promise<Array<{ slug: string }>> {
-        return (await NotionAdapter.getPageChild(pageId)).map(NotionHelper.transformChildPageToPaths);
+    static async getPaths(pageId: string): Promise<Array<{ slug: Array<string> }>> {
+        return (await NotionAdapter.getPageChildRecursive(pageId)).map(NotionHelper.transformChildPageToPaths(pageId));
     }
 
-    static transformChildPageToPaths(child: string): { slug: string } {
-        return {
+    static transformChildPageToPaths(rootPageId: string) {
+        return (child: Array<string>): { slug: Array<string> } => ({
             slug: child
-        }
+        })
     }
 }
