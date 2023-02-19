@@ -1,12 +1,16 @@
 import './globals.css'
 import { AnalyticsWrapper } from './components/analytics';
 import { Header } from './components/header/header.component';
+import { ScrollTop } from './components/scroll-top/scroll-top.component';
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+
   return (
     <html lang="en">
       {/*
@@ -15,6 +19,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <ScrollTop />
         <Header />
         {children}
         <AnalyticsWrapper />
