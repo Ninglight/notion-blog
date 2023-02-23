@@ -1,11 +1,13 @@
-import { use } from "react";
 import { NotionAdapter } from "../notion.adapter";
+import { getNotionEmoji } from "../utils/notion-emoji";
+import { getNotionTitle } from "../utils/notion-title";
 
 export default async function Head({ params }: { params: { slug: string }}) {
   const pageId = params.slug[params.slug.length - 1];
   const page = await NotionAdapter.getPageMeta(pageId); 
-  const emoji = page.icon ? page.icon?.emoji : '';
-  const title = page.properties.title.title[0].plain_text;
+  const emoji = getNotionEmoji(page.icon);
+  const title = getNotionTitle(page.properties.title);
+
   return (
     <>
       <title>{title}</title>

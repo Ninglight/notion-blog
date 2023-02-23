@@ -1,0 +1,41 @@
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-color);
+}
+
+.code {
+    font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    line-height: normal;
+    background: rgba(135,131,120,0.15);
+    color: #EB5757;
+    border-radius: 3px;
+    font-size: 85%;
+    padding: 0.2em 0.4em;
+}
+
+.link {
+    border-bottom: 0.05em solid;
+    border-color: rgba(255, 255, 255, 0.283);
+    opacity: 0.7;
+}
+
+.underline {
+    color: inherit;
+    border-bottom: 0.05em solid;
+    word-wrap: break-word;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.italic {
+    font-style: italic;
+}

@@ -1,16 +1,17 @@
+import { Page } from "notion-api-types/responses";
 import { NotionApi } from "./notion.api";
-import { NotionBlockType } from "./notion.model";
+import { NotionBlocks, NotionBlockType } from "./notion.model";
 
 export class NotionAdapter {
-    static async getPageMeta(pageId: string) {
+    static async getPageMeta(pageId: string): Promise<Page> {
         return await NotionApi.getPage(pageId);
     }
 
-    static async getBlock(pageId: string) {
+    static async getBlock(pageId: string): Promise<NotionBlocks> {
         return await NotionApi.getBlock(pageId);
     }
 
-    static async getPageData(pageId: string) {
+    static async getPageData(pageId: string): Promise<[Page, NotionBlocks]> {
         const page = await NotionApi.getPage(pageId);
         const blocks = await NotionApi.getBlockChildren(pageId);
         return [page, blocks];
@@ -22,7 +23,6 @@ export class NotionAdapter {
         const getPageIdFromBlock = (block: any) => block.id;
         return blocks.results.filter(filterChildPage).map(getPageIdFromBlock);
     }
-
 
     static async getPageChildRecursive(pageId: string): Promise<Array<Array<string>>> {
         const children = []

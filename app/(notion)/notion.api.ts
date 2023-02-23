@@ -1,24 +1,27 @@
+import { Page } from "notion-api-types/responses";
+import { NotionBlocks } from "./notion.model";
+
 export class NotionApi {
   static basepath = process.env.NOTION_BASEPATH;
   static token = process.env.NOTION_TOKEN;
 
-  static async getPage(pageId: string) {
-    return NotionApi.get(`${this.basepath}pages/${pageId}`);
+  static async getPage(pageId: string): Promise<Page> {
+    return NotionApi.get<Page>(`${this.basepath}pages/${pageId}`);
   }
 
-  static async getBlock(pageId: string) {
-    return NotionApi.get(`${this.basepath}blocks/${pageId}`);
+  static async getBlock(pageId: string): Promise<NotionBlocks> {
+    return NotionApi.get<NotionBlocks>(`${this.basepath}blocks/${pageId}`);
   }
 
-  static async getBlockChildren(pageId: string) {
-    return NotionApi.get(`${this.basepath}blocks/${pageId}/children?page_size=200`);
+  static async getBlockChildren(pageId: string): Promise<NotionBlocks> {
+    return NotionApi.get<NotionBlocks>(`${this.basepath}blocks/${pageId}/children?page_size=200`);
   }
 
-  static async get(url: string) {
+  static async get<T>(url: string): Promise<T> {
     return fetch(url, NotionApi.getRequestInit('GET'))
       .then(res => res.json()) 
       .catch((error) => {
-        throw new Error(error)
+        throw new Error(`Error on request: ${url}`, error)
       })
   }
 
